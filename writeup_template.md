@@ -32,7 +32,7 @@ My pipeline consisted of 5 steps.
 6.Get lines using HoughLinesP.
 7.write lines at original image.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function. Lines are divided into two groups using slope, left with slope less then -0.5, and right with x axis greater than 0.5.To drop some noise , i select slope threathold -0.5 & 0.5 instead of 0.  Then fit left & right lines with Least_squares.
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function. Lines are divided into two groups using slope, left with slope less then -0.3, and right with x axis greater than 0.3.To drop some noise , i select slope threathold -0.3 & 0.3 instead of 0.  Then fit left & right lines with Least_squares.
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
@@ -49,6 +49,8 @@ If you'd like to include images to show how the pipeline works, here is how to i
 3.While my pipeline did not work well when trying challenge.There are too much noise in challenge images.
 
 4.Night would be another challenge.
+
+5.Other vehicles which are white or yellow would be noise.
 
 
 ### 3. Suggest possible improvements to your pipeline
