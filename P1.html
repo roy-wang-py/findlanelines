@@ -11894,7 +11894,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd0e48f60&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3c534eb8&gt;</pre>
 </div>
 
 </div>
@@ -11962,7 +11962,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -12011,23 +12011,6 @@ div#notebook {
     <span class="k">return</span> <span class="n">masked_image</span>
 
 
-<span class="c1">#calute averge line</span>
-<span class="k">def</span> <span class="nf">Least_squares</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">y_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y_</span><span class="p">)</span>
-        <span class="n">m</span> <span class="o">+=</span> <span class="n">k</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_</span> <span class="p">)</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">p</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="n">n</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">y_</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span> <span class="n">x_</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>
-
 <span class="k">def</span> <span class="nf">draw_lines</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    NOTE: this is the function you might want to use as a starting point once you want to </span>
@@ -12069,7 +12052,7 @@ div#notebook {
 <span class="sd">    this function with the weighted_img() function below</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-
+    <span class="n">imshape</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">left_lines</span> <span class="o">=</span> <span class="p">[[],[]]</span>
     <span class="n">right_lines</span> <span class="o">=</span> <span class="p">[[],[]]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
@@ -12077,12 +12060,12 @@ div#notebook {
             
             <span class="k">if</span> <span class="n">x1</span> <span class="o">!=</span> <span class="n">x2</span> <span class="ow">and</span> <span class="n">y1</span> <span class="o">!=</span> <span class="n">y2</span><span class="p">:</span>
                 <span class="n">slope</span> <span class="o">=</span> <span class="p">((</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">))</span>
-                <span class="k">if</span> <span class="n">slope</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.3</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">slope</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.3</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
                     <span class="n">left_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
                     <span class="n">left_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
                     <span class="n">left_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
                     <span class="n">left_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
-                <span class="k">elif</span> <span class="n">slope</span> <span class="o">&gt;</span> <span class="mf">0.3</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+                <span class="k">elif</span> <span class="n">slope</span> <span class="o">&gt;</span> <span class="mf">0.3</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
                     <span class="n">right_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
                     <span class="n">right_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
                     <span class="n">right_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
@@ -12102,16 +12085,18 @@ div#notebook {
                 
     <span class="c1">#draw left line</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">left_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">Least_squares</span><span class="p">(</span><span class="n">left_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">left_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">x_min</span> <span class="o">=</span> <span class="n">y_min</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span>
-        <span class="n">x_max</span> <span class="o">=</span> <span class="n">y_max</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span>
+        <span class="c1">#m,n = Least_squares(left_lines[1], left_lines[0])</span>
+        <span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">left_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">left_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_min</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">x_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_max</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
         <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
 
     <span class="c1">#draw right line</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">right_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">Least_squares</span><span class="p">(</span><span class="n">right_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">right_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">x_min</span> <span class="o">=</span> <span class="n">y_min</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span>
-        <span class="n">x_max</span> <span class="o">=</span> <span class="n">y_max</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span>
+        <span class="c1">#m,n = Least_squares(right_lines[1], right_lines[0])</span>
+        <span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">right_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">right_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x_min</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_min</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">x_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_max</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
         <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">hough_lines</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">min_line_len</span><span class="p">,</span> <span class="n">max_line_gap</span><span class="p">):</span>
@@ -12161,7 +12146,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -12178,7 +12163,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[39]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -12219,7 +12204,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Build your pipeline that will draw lane lines on the test_images</span>
@@ -12247,13 +12232,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd0ef1cf8&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3c5eea58&gt;</pre>
 </div>
 
 </div>
@@ -12279,7 +12264,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#convert to gray</span>
@@ -12298,13 +12283,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd141eb38&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3dae0cc0&gt;</pre>
 </div>
 
 </div>
@@ -12330,7 +12315,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#gaussianblur </span>
@@ -12349,13 +12334,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd24970f0&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3db480b8&gt;</pre>
 </div>
 
 </div>
@@ -12381,7 +12366,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#canny: edges detected</span>
@@ -12401,13 +12386,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd24f82b0&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3dba9358&gt;</pre>
 </div>
 
 </div>
@@ -12433,7 +12418,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#region select</span>
@@ -12454,13 +12439,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd25587b8&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3dc0a860&gt;</pre>
 </div>
 
 </div>
@@ -12486,7 +12471,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#hough</span>
@@ -12515,13 +12500,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd27e4fd0&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3de00ba8&gt;</pre>
 </div>
 
 </div>
@@ -12547,7 +12532,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a &quot;color&quot; binary image to combine with line image</span>
@@ -12568,13 +12553,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x29dd2cf7b00&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1ff3e1826d8&gt;</pre>
 </div>
 
 </div>
@@ -12619,7 +12604,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import everything needed to edit/save/watch video clips</span>
@@ -12634,7 +12619,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
@@ -12664,7 +12649,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
     <span class="n">edges</span> <span class="o">=</span> <span class="n">canny</span><span class="p">(</span><span class="n">blur_gray</span><span class="p">,</span> <span class="n">low_threshold</span><span class="p">,</span> <span class="n">high_threshold</span><span class="p">)</span>
     
     <span class="n">imshape</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-    <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[(</span><span class="mi">0</span><span class="p">,</span><span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),(</span><span class="mi">430</span><span class="p">,</span> <span class="mi">325</span><span class="p">),</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">325</span><span class="p">),</span> <span class="p">(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[(</span><span class="mi">0</span><span class="p">,</span><span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">0.45</span><span class="p">,</span> <span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.6</span><span class="p">),</span> <span class="p">(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">0.55</span><span class="p">,</span> <span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.6</span><span class="p">),</span> <span class="p">(</span><span class="n">imshape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">imshape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
     <span class="n">masked_edges</span> <span class="o">=</span> <span class="n">region_of_interest</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">vertices</span><span class="p">)</span>
     <span class="c1">#masked_edges = region_of_interest(edges&amp; ~color_thresholds, vertices)</span>
     
@@ -12701,7 +12686,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">white_output</span> <span class="o">=</span> <span class="s1">&#39;test_videos_output/solidWhiteRight.mp4&#39;</span>
@@ -12741,7 +12726,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████▋| 221/222 [00:05&lt;00:00, 38.31it/s]
+<pre>100%|███████████████████████████████████████████████████████████████████████████████▋| 221/222 [00:06&lt;00:00, 34.70it/s]
 </pre>
 </div>
 </div>
@@ -12755,7 +12740,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/solidWhiteRight.mp4 
 
-Wall time: 6.22 s
+Wall time: 6.84 s
 </pre>
 </div>
 </div>
@@ -12775,7 +12760,7 @@ Wall time: 6.22 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -12795,7 +12780,7 @@ Wall time: 6.22 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12834,7 +12819,7 @@ Wall time: 6.22 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yellow_output</span> <span class="o">=</span> <span class="s1">&#39;test_videos_output/solidYellowLeft.mp4&#39;</span>
@@ -12874,7 +12859,7 @@ Wall time: 6.22 s
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████▉| 681/682 [00:18&lt;00:00, 37.51it/s]
+<pre>100%|███████████████████████████████████████████████████████████████████████████████▉| 681/682 [00:19&lt;00:00, 35.12it/s]
 </pre>
 </div>
 </div>
@@ -12888,7 +12873,7 @@ Wall time: 6.22 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/solidYellowLeft.mp4 
 
-Wall time: 18.6 s
+Wall time: 19.9 s
 </pre>
 </div>
 </div>
@@ -12899,7 +12884,7 @@ Wall time: 18.6 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -12919,7 +12904,7 @@ Wall time: 18.6 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12957,7 +12942,7 @@ Wall time: 18.6 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">challenge_output</span> <span class="o">=</span> <span class="s1">&#39;test_videos_output/challenge.mp4&#39;</span>
@@ -12997,105 +12982,7 @@ Wall time: 18.6 s
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>
-  0%|                                                                                          | 0/251 [00:00&lt;?, ?it/s]
-  1%|▉                                                                                 | 3/251 [00:00&lt;00:11, 21.52it/s]
-  2%|█▉                                                                                | 6/251 [00:00&lt;00:11, 22.11it/s]
-  4%|██▉                                                                               | 9/251 [00:00&lt;00:11, 21.55it/s]
-  4%|███▌                                                                             | 11/251 [00:00&lt;00:11, 21.56it/s]
-  6%|████▌                                                                            | 14/251 [00:00&lt;00:11, 21.22it/s]
-  6%|█████▏                                                                           | 16/251 [00:00&lt;00:11, 20.34it/s]
-  7%|█████▊                                                                           | 18/251 [00:00&lt;00:11, 19.67it/s]
-  8%|██████▊                                                                          | 21/251 [00:01&lt;00:11, 19.87it/s]
- 10%|███████▋                                                                         | 24/251 [00:01&lt;00:11, 19.95it/s]
- 11%|████████▋                                                                        | 27/251 [00:01&lt;00:11, 20.04it/s]
- 12%|█████████▋                                                                       | 30/251 [00:01&lt;00:10, 20.12it/s]
- 13%|██████████▋                                                                      | 33/251 [00:01&lt;00:10, 20.33it/s]
- 14%|███████████▌                                                                     | 36/251 [00:01&lt;00:10, 20.48it/s]
- 16%|████████████▌                                                                    | 39/251 [00:01&lt;00:10, 20.46it/s]
- 17%|█████████████▌                                                                   | 42/251 [00:02&lt;00:10, 20.56it/s]
- 18%|██████████████▌                                                                  | 45/251 [00:02&lt;00:10, 20.55it/s]
- 19%|███████████████▍                                                                 | 48/251 [00:02&lt;00:09, 20.66it/s]
- 20%|████████████████▍                                                                | 51/251 [00:02&lt;00:09, 20.61it/s]
- 22%|█████████████████▍                                                               | 54/251 [00:02&lt;00:09, 20.60it/s]
- 23%|██████████████████▍                                                              | 57/251 [00:02&lt;00:09, 20.60it/s]
- 24%|███████████████████▎                                                             | 60/251 [00:02&lt;00:09, 20.63it/s]
- 25%|████████████████████▎                                                            | 63/251 [00:03&lt;00:09, 20.70it/s]
- 26%|█████████████████████▎                                                           | 66/251 [00:03&lt;00:08, 20.60it/s]
- 27%|██████████████████████▎                                                          | 69/251 [00:03&lt;00:08, 20.62it/s]
- 29%|███████████████████████▏                                                         | 72/251 [00:03&lt;00:08, 20.61it/s]
- 30%|████████████████████████▏                                                        | 75/251 [00:03&lt;00:08, 20.58it/s]
- 31%|█████████████████████████▏                                                       | 78/251 [00:03&lt;00:08, 20.59it/s]
- 32%|██████████████████████████▏                                                      | 81/251 [00:03&lt;00:08, 20.60it/s]
- 33%|███████████████████████████                                                      | 84/251 [00:04&lt;00:08, 20.55it/s]
- 35%|████████████████████████████                                                     | 87/251 [00:04&lt;00:07, 20.54it/s]
- 36%|█████████████████████████████                                                    | 90/251 [00:04&lt;00:07, 20.53it/s]
- 37%|██████████████████████████████                                                   | 93/251 [00:04&lt;00:07, 20.39it/s]
- 38%|██████████████████████████████▋                                                  | 95/251 [00:04&lt;00:07, 20.28it/s]
- 39%|███████████████████████████████▎                                                 | 97/251 [00:04&lt;00:07, 20.26it/s]
- 39%|███████████████████████████████▉                                                 | 99/251 [00:04&lt;00:07, 20.22it/s]
- 40%|████████████████████████████████▏                                               | 101/251 [00:04&lt;00:07, 20.21it/s]
- 41%|████████████████████████████████▊                                               | 103/251 [00:05&lt;00:07, 20.19it/s]
- 42%|█████████████████████████████████▍                                              | 105/251 [00:05&lt;00:07, 20.14it/s]
- 43%|██████████████████████████████████                                              | 107/251 [00:05&lt;00:07, 20.13it/s]
- 43%|██████████████████████████████████▋                                             | 109/251 [00:05&lt;00:07, 20.00it/s]
- 44%|███████████████████████████████████▍                                            | 111/251 [00:05&lt;00:07, 19.81it/s]
- 45%|████████████████████████████████████                                            | 113/251 [00:05&lt;00:06, 19.76it/s]
- 46%|████████████████████████████████████▋                                           | 115/251 [00:05&lt;00:06, 19.69it/s]
- 47%|█████████████████████████████████████▎                                          | 117/251 [00:05&lt;00:06, 19.67it/s]
- 47%|█████████████████████████████████████▉                                          | 119/251 [00:06&lt;00:06, 19.62it/s]
- 48%|██████████████████████████████████████▌                                         | 121/251 [00:06&lt;00:06, 19.61it/s]
- 49%|███████████████████████████████████████▏                                        | 123/251 [00:06&lt;00:06, 19.56it/s]
- 50%|███████████████████████████████████████▊                                        | 125/251 [00:06&lt;00:06, 19.53it/s]
- 51%|████████████████████████████████████████▍                                       | 127/251 [00:06&lt;00:06, 19.53it/s]
- 51%|█████████████████████████████████████████                                       | 129/251 [00:06&lt;00:06, 19.50it/s]
- 52%|█████████████████████████████████████████▊                                      | 131/251 [00:06&lt;00:06, 19.49it/s]
- 53%|██████████████████████████████████████████▍                                     | 133/251 [00:06&lt;00:06, 19.48it/s]
- 54%|███████████████████████████████████████████                                     | 135/251 [00:06&lt;00:05, 19.47it/s]
- 55%|███████████████████████████████████████████▋                                    | 137/251 [00:07&lt;00:05, 19.46it/s]
- 55%|████████████████████████████████████████████▎                                   | 139/251 [00:07&lt;00:05, 19.47it/s]
- 56%|████████████████████████████████████████████▉                                   | 141/251 [00:07&lt;00:05, 19.46it/s]
- 57%|█████████████████████████████████████████████▌                                  | 143/251 [00:07&lt;00:05, 19.47it/s]
- 58%|██████████████████████████████████████████████▌                                 | 146/251 [00:07&lt;00:05, 19.49it/s]
- 59%|███████████████████████████████████████████████▍                                | 149/251 [00:07&lt;00:05, 19.52it/s]
- 61%|████████████████████████████████████████████████▍                               | 152/251 [00:07&lt;00:05, 19.54it/s]
- 62%|█████████████████████████████████████████████████▍                              | 155/251 [00:07&lt;00:04, 19.56it/s]
- 63%|██████████████████████████████████████████████████▎                             | 158/251 [00:08&lt;00:04, 19.58it/s]
- 64%|███████████████████████████████████████████████████▎                            | 161/251 [00:08&lt;00:04, 19.58it/s]
- 65%|████████████████████████████████████████████████████▎                           | 164/251 [00:08&lt;00:04, 19.57it/s]
- 66%|████████████████████████████████████████████████████▉                           | 166/251 [00:08&lt;00:04, 19.57it/s]
- 67%|█████████████████████████████████████████████████████▌                          | 168/251 [00:08&lt;00:04, 19.57it/s]
- 68%|██████████████████████████████████████████████████████▌                         | 171/251 [00:08&lt;00:04, 19.58it/s]
- 69%|███████████████████████████████████████████████████████▍                        | 174/251 [00:08&lt;00:03, 19.60it/s]
- 71%|████████████████████████████████████████████████████████▍                       | 177/251 [00:09&lt;00:03, 19.60it/s]
- 71%|█████████████████████████████████████████████████████████                       | 179/251 [00:09&lt;00:03, 19.60it/s]
- 72%|█████████████████████████████████████████████████████████▋                      | 181/251 [00:09&lt;00:03, 19.60it/s]
- 73%|██████████████████████████████████████████████████████████▎                     | 183/251 [00:09&lt;00:03, 19.59it/s]
- 74%|██████████████████████████████████████████████████████████▉                     | 185/251 [00:09&lt;00:03, 19.59it/s]
- 75%|███████████████████████████████████████████████████████████▉                    | 188/251 [00:09&lt;00:03, 19.61it/s]
- 76%|████████████████████████████████████████████████████████████▉                   | 191/251 [00:09&lt;00:03, 19.62it/s]
- 77%|█████████████████████████████████████████████████████████████▊                  | 194/251 [00:09&lt;00:02, 19.62it/s]
- 78%|██████████████████████████████████████████████████████████████▊                 | 197/251 [00:10&lt;00:02, 19.64it/s]
- 80%|███████████████████████████████████████████████████████████████▋                | 200/251 [00:10&lt;00:02, 19.65it/s]
- 81%|████████████████████████████████████████████████████████████████▋               | 203/251 [00:10&lt;00:02, 19.66it/s]
- 82%|█████████████████████████████████████████████████████████████████▋              | 206/251 [00:10&lt;00:02, 19.68it/s]
- 83%|██████████████████████████████████████████████████████████████████▌             | 209/251 [00:10&lt;00:02, 19.69it/s]
- 84%|███████████████████████████████████████████████████████████████████▌            | 212/251 [00:10&lt;00:01, 19.70it/s]
- 86%|████████████████████████████████████████████████████████████████████▌           | 215/251 [00:10&lt;00:01, 19.71it/s]
- 87%|█████████████████████████████████████████████████████████████████████▍          | 218/251 [00:11&lt;00:01, 19.72it/s]
- 88%|██████████████████████████████████████████████████████████████████████▍         | 221/251 [00:11&lt;00:01, 19.73it/s]
- 89%|███████████████████████████████████████████████████████████████████████▍        | 224/251 [00:11&lt;00:01, 19.75it/s]
- 90%|████████████████████████████████████████████████████████████████████████▎       | 227/251 [00:11&lt;00:01, 19.71it/s]
- 91%|████████████████████████████████████████████████████████████████████████▉       | 229/251 [00:11&lt;00:01, 19.67it/s]
- 92%|█████████████████████████████████████████████████████████████████████████▉      | 232/251 [00:11&lt;00:00, 19.68it/s]
- 94%|██████████████████████████████████████████████████████████████████████████▉     | 235/251 [00:11&lt;00:00, 19.68it/s]
- 94%|███████████████████████████████████████████████████████████████████████████▌    | 237/251 [00:12&lt;00:00, 19.63it/s]
- 95%|████████████████████████████████████████████████████████████████████████████▏   | 239/251 [00:12&lt;00:00, 19.58it/s]
- 96%|████████████████████████████████████████████████████████████████████████████▊   | 241/251 [00:12&lt;00:00, 19.56it/s]
- 97%|█████████████████████████████████████████████████████████████████████████████▍  | 243/251 [00:12&lt;00:00, 19.56it/s]
- 98%|██████████████████████████████████████████████████████████████████████████████▍ | 246/251 [00:12&lt;00:00, 19.57it/s]
- 99%|███████████████████████████████████████████████████████████████████████████████ | 248/251 [00:12&lt;00:00, 19.57it/s]
-100%|████████████████████████████████████████████████████████████████████████████████| 251/251 [00:12&lt;00:00, 19.59it/s]
+<pre>100%|████████████████████████████████████████████████████████████████████████████████| 251/251 [00:12&lt;00:00, 19.63it/s]
 </pre>
 </div>
 </div>
@@ -13109,7 +12996,7 @@ Wall time: 18.6 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/challenge.mp4 
 
-Wall time: 13.8 s
+Wall time: 13.7 s
 </pre>
 </div>
 </div>
@@ -13120,7 +13007,7 @@ Wall time: 13.8 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -13140,7 +13027,7 @@ Wall time: 13.8 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
